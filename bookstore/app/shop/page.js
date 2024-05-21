@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
+import Product from "../Components/Product.js";
 // import Book from '../components/Book/Book.js';
 
 const bookData = [
@@ -213,7 +214,7 @@ export default function page() {
   //   console.log(bookData);
   return (
     <>
-      <div className={styles.contactPage}>
+      <div className={styles.shop__container}>
         <div className={styles.navigations}>
           <div className={styles.logo}>
             <h1 className={styles.logo}>BookHaven 📖</h1>
@@ -256,6 +257,16 @@ export default function page() {
         {bookData.map((book)=> <Book book={book} key={book.id} />)}
       </div>
       </div> */}
+        <div className={styles.shop__image}>
+          <img
+            className={styles.shop__bg}
+            src="/images/book.bg1.jpeg"
+            alt="shop"
+          />
+        </div>
+        <div className={styles.product__container}>
+          <Product />
+        </div>
       </div>
     </>
   );
