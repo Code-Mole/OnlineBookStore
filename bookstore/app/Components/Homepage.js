@@ -53,10 +53,10 @@ function Homepage() {
         <div className={styles.sub_container_right}>
           <div className={styles.log_Ins}>
             <button className={styles.btn} id={styles.btn1} type="button">
-              <a href="Login">logIn</a>
+              <a href="login">logIn</a>
             </button>
             <button className={styles.btn} type="button">
-              <a href="SignUp">Create Account</a>
+              <a href="signUp">Create Account</a>
             </button>
           </div>
         </div>
