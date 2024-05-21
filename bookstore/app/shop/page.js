@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Product from "../Components/Product.js";
 // import Book from '../components/Book/Book.js';
 
@@ -248,6 +249,12 @@ export default function page() {
                     Contact
                   </a>
                 </li>
+                <li>
+                  <a href="">
+                    <ShoppingBasketIcon className={styles.icons} />
+                    <span>0</span>
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -265,7 +272,29 @@ export default function page() {
           />
         </div>
         <div className={styles.product__container}>
-          <Product />
+          <div className={styles.product__row}>
+            <Product />
+            <Product />
+            <Product />
+          </div>
+          <div className={styles.product__row}>
+            <Product />
+            <Product />
+          </div>
+          <div className={styles.product__row}>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+          </div>
+          <div className={styles.product__row}>
+            <Product />
+            <Product />
+          </div>
+          <div className={styles.product__row}>
+            <Product />
+            {/* <Product /> */}
+          </div>
         </div>
       </div>
     </>
