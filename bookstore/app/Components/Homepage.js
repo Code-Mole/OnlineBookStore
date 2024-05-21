@@ -1,5 +1,9 @@
 import React from "react";
 import styles from "../page.module.css";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import InfoIcon from "@mui/icons-material/Info";
+
 function Homepage() {
   return (
     <>
@@ -13,13 +17,22 @@ function Homepage() {
               <nav>
                 <ul>
                   <li>
-                    <a href="Shop">Shop</a>
+                    <a href="shop">
+                      <ShoppingCartIcon className={styles.icons} />
+                      Shop
+                    </a>
                   </li>
                   <li>
-                    <a href="About">About</a>
+                    <a href="about">
+                      <InfoIcon className={styles.icons} />
+                      About
+                    </a>
                   </li>
                   <li>
-                    <a href="Contact">Contact</a>
+                    <a href="contact">
+                      <ContactsIcon className={styles.icons} />
+                      Contact
+                    </a>
                   </li>
                 </ul>
               </nav>
@@ -56,7 +69,7 @@ function Homepage() {
               <a href="login">logIn</a>
             </button>
             <button className={styles.btn} type="button">
-              <a href="signUp">Create Account</a>
+              <a href="signup">Create Account</a>
             </button>
           </div>
         </div>

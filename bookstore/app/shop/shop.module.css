@@ -1,0 +1,47 @@
+.navigations {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  position: static;
+}
+.logo h1 {
+  font-size: 1.5rem;
+  color: #000;
+  position: relative;
+  left: 40px;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px red;
+  border-radius: 15px;
+}
+.nav ul li {
+  display: flex;
+  list-style: none;
+  padding: 15px;
+}
+.nav li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+.nav li a:hover {
+  color: rgb(241, 44, 80);
+  transform: scale(1.1);
+}
+.nav ul {
+  display: flex;
+  position: relative;
+  right: 20%;
+}
+.shopmargin {
+  margin: 100px;
+  padding: 25px;
+  display: flex;
+  /* grid-template-columns:  1fr 1fr 1fr; */
+}
+.icons {
+  color: #261145;
+  margin-right: 10px;
+}
