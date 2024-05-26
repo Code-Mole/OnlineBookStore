@@ -250,7 +250,7 @@ export default function page() {
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="Backet">
                     <ShoppingBasketIcon className={styles.icons} />
                     <span>0</span>
                   </a>
@@ -273,26 +273,86 @@ export default function page() {
         </div>
         <div className={styles.product__container}>
           <div className={styles.product__row}>
-            <Product />
-            <Product />
-            <Product />
+            <Product
+              title="Infinite Powers"
+              price={29.99}
+              image="/images/book1.jpeg"
+              rating={4}
+            />
+            <Product
+              title="Javascript for beginners"
+              price={39.99}
+              image="/images/book3.jpeg"
+              rating={5}
+            />
+            <Product
+              title="Systems analysis and design"
+              price={33.99}
+              image="/images/book4.jpeg"
+              rating={5}
+            />
           </div>
           <div className={styles.product__row}>
-            <Product />
-            <Product />
+            <Product
+              title="Machine Learning system design interview for developers "
+              price={41.99}
+              image="/images/book6.jpeg"
+              rating={5}
+            />
+            <Product
+              title="Story Thieves"
+              price={12.99}
+              image="/images/book7.jpeg"
+              rating={2}
+            />
           </div>
           <div className={styles.product__row}>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <Product
+              title="Take my hand"
+              price={15.99}
+              image="/images/book10.jpeg"
+              rating={3}
+            />
+            <Product
+              title="Coding basics for beginners"
+              price={23.99}
+              image="/images/book13.jpeg"
+              rating={5}
+            />
+            <Product
+              title="programming languages for Machine Learning"
+              price={45.99}
+              image="/images/book14.jpeg"
+              rating={5}
+            />
+            <Product
+              title="The complete software developer`s career guide"
+              price={30.99}
+              image="/images/book16.jpeg"
+              rating={5}
+            />
           </div>
           <div className={styles.product__row}>
-            <Product />
-            <Product />
+            <Product
+              title="Small business ideas for beginners"
+              price={25.99}
+              image="/images/book18.jpeg"
+              rating={4}
+            />
+            <Product
+              title="How to do thing in a smart way"
+              price={13.99}
+              image="/images/book19.jpeg"
+              rating={4}
+            />
           </div>
           <div className={styles.product__row}>
-            <Product />
+            <Product
+              title="Guide to Graphic design"
+              price={28.99}
+              image="/images/book20.jpeg"
+              rating={5}
+            />
             {/* <Product /> */}
           </div>
         </div>
