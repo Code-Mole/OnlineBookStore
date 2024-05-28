@@ -1,5 +1,6 @@
 import express from "express";
 import { bookRouter } from "./Routes/bookRouter.js";
+import "./Model/Db.js";
 
 const server = express();
 
