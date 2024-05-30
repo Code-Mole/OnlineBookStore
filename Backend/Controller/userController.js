@@ -1,4 +1,5 @@
 import { userModel } from "../Model/userModel.js";
+import bcrypt from "bcrypt";
 
 const getUsers = async (req, res) => {
   try {
@@ -21,14 +22,25 @@ const getUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const [first__name, last__name, email, password, phoneNumber] = req.body;
-  if (!first__name || !last__name || !email || !password || !phoneNumber) {
-    return res.status(400).json({ message: "All fields are required" });
-  }
+  const { first__name, last__name, email, password, phoneNumber } = req.body;
+  //   if (!first__name || !last__name || !email || !password || !phoneNumber) {
+  //     return res.status(400).json({ message: "All fields are required" });
+  //   }
+  const hashPassword = await bcrypt.hash(password, 10);
+  console.log(hashPassword);
   try {
-  } catch (error) {}
-
-  res.json({ message: "create user" });
+    const user = await userModel.create({
+      first__name,
+      last__name,
+      email,
+      password: hashPassword,
+      phoneNumber,
+    });
+    return res.status(201).json(user);
+  } catch (error) {
+    console.log({ message: error.message });
+    return res.status(400).json({ message: "Invalid data" });
+  }
 };
 
 const updateUser = async (req, res) => {
