@@ -46,12 +46,12 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   // res.json({ message: "update user" });
+  const user = await userModel.findById(req.params.id);
+  if (!user) {
+    res.status(404).json({ message: "user not found" });
+  }
   try {
-    const user = await userModel.findById(req.params.id);
-    // if (!user) {
-    //   res.status(404).json({ message: "user not found" });
-    // }
-    await userModel.findByIdAndUpdate(req.params.id, req.body);
+    const user = await userModel.findByIdAndUpdate(req.params.id, req.body);
     res.status(201).json({ message: "user updated" }, user);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -60,7 +60,18 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  res.json({ message: "delete user" });
+  // res.json({ message: "delete user" });
+  // const user = await userModel.findById(req.params.id);
+  // if (!user) {
+  //   res.status(404).json({ message: "user not found" });
+  // }
+  try {
+    const user = await userModel.findByIdAndDelete(req.params.id);
+    res.json({ message: "user deleted" }, user);
+  } catch (err) {
+    res.json({ message: err.message });
+    console.log(err);
+  }
 };
 
 export { createUser, getUser, getUsers, updateUser, deleteUser };
