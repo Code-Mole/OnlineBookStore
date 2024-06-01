@@ -22,13 +22,14 @@ const getUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { first__name, last__name, email, password, phoneNumber } = req.body;
-  //   if (!first__name || !last__name || !email || !password || !phoneNumber) {
-  //     return res.status(400).json({ message: "All fields are required" });
-  //   }
-  const hashPassword = await bcrypt.hash(password, 10);
-  console.log(hashPassword);
   try {
+    const { first__name, last__name, email, password, phoneNumber } = req.body;
+    // if (!first__name || !last__name || !email || !password || !phoneNumber) {
+    //   return res.status(400).json({ message: "All fields are required" });
+    // }
+    const hashPassword = await bcrypt.hash(password, 10);
+    console.log(hashPassword);
+
     const user = await userModel.create({
       first__name,
       last__name,
@@ -44,7 +45,18 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  res.json({ message: "update user" });
+  // res.json({ message: "update user" });
+  try {
+    const user = await userModel.findById(req.params.id);
+    // if (!user) {
+    //   res.status(404).json({ message: "user not found" });
+    // }
+    await userModel.findByIdAndUpdate(req.params.id, req.body);
+    res.status(201).json({ message: "user updated" }, user);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+    console.log(error);
+  }
 };
 
 const deleteUser = async (req, res) => {
