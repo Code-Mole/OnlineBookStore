@@ -1,10 +1,11 @@
 import express from "express";
+import cors from "cors";
 import { bookRouter } from "./Routes/bookRouter.js";
 import "./Model/Db.js";
 import { userRouter } from "./Routes/userRouter.js";
 
 const server = express();
-
+server.use(cors());
 server.use(express.json());
 server.use("/api/books", bookRouter);
 server.use("/api/users", userRouter);
