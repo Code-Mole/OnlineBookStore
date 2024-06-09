@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styles from "./contact.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -6,6 +8,50 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
 
 function page() {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+
+  const data = {
+    userName,
+    email,
+    phoneNumber,
+    message,
+  };
+
+  // const message = ()=>{
+
+  // }
+  // console.log(data);
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post("http://localhost:8080/api/contacts", data)
+        .then((res) => {
+          alert("Message sent successfully");
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      await axios.get("http://localhost:8080/api/contacts").then((res) => {
+        console.log(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className={styles.RootPage}>
@@ -75,26 +121,34 @@ function page() {
                   name="username"
                   type="text"
                   placeholder="Username"
+                  onChange={(e) => setUserName(e.target.value)}
                 />
                 <input
                   id={styles.inputField}
                   name="Email"
                   type="email"
                   placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   id={styles.inputField}
                   name="Phonenumber"
                   type="Number"
                   placeholder="Phonenumber 📞"
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
                 <textarea
                   id={styles.teatArea}
                   cols={35}
                   rows={15}
                   placeholder="Say Something ........"
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
-                <button className={styles.textBtn} type="submit">
+                <button
+                  className={styles.textBtn}
+                  type="submit"
+                  onClick={sendMessage}
+                >
                   Submit
                 </button>
               </form>
