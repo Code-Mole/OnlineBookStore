@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import axios from "axios";
 import styles from "../login/login.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -6,6 +8,29 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
 
 function page() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("proceed");
+    try {
+      await axios
+        .post("http://localhost:8080/api/users/login", { email })
+        .then((res) => {
+          return res.json();
+          console.log("ready");
+        })
+        .then((resp) => {
+          console.log(resp);
+        });
+    } catch (err) {
+      console.log(err.message);
+      alert(err.message);
+    }
+    setEmail("");
+    setPassword("");
+  };
   return (
     <>
       <div className={styles.loginContainer}>
@@ -46,27 +71,35 @@ function page() {
           </div>
         </div>
         <div className={styles.loginSubContainer}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>LogIn</h1>
             <div className={styles.inputContainer}>
               <div className={styles.inputBox}>
-                <input
+                {/* <input
                   id={styles.inputField}
                   type="text"
                   placeholder="Username"
+                  autoComplete="off"
                   required
-                />
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                /> */}
                 <input
                   id={styles.inputField}
                   type="email"
                   placeholder="Email"
+                  autoComplete="off"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   id={styles.inputField}
                   type="password"
                   placeholder="Password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <p id={styles.para}>

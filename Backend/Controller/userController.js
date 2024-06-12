@@ -49,16 +49,17 @@ const logUser = async (req, res) => {
     if (!checkUser) {
       return res.status(404).json({ message: "user not found" });
     }
+
     const checkPassword = await bcrypt.compare(
       req.body.password,
       checkUser.password
     );
+
     if (!checkPassword) {
       return res.status(404).json({ message: "Invalid password " });
+    } else {
+      return res.send({ user: checkUser });
     }
-    //  else {
-    //   return res.render("home", { user: checkUser });
-    // }
   } catch (error) {
     console.log({ message: error.message });
     return res.status(400).json({ message: "Invalid data" });
