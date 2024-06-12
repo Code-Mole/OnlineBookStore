@@ -43,6 +43,28 @@ const createUser = async (req, res) => {
   }
 };
 
+const logUser = async (req, res) => {
+  try {
+    const checkUser = await userModel.findOne({ email: req.body.email });
+    if (!checkUser) {
+      return res.status(404).json({ message: "user not found" });
+    }
+    const checkPassword = await bcrypt.compare(
+      req.body.password,
+      checkUser.password
+    );
+    if (!checkPassword) {
+      return res.status(404).json({ message: "Invalid password " });
+    }
+    //  else {
+    //   return res.render("home", { user: checkUser });
+    // }
+  } catch (error) {
+    console.log({ message: error.message });
+    return res.status(400).json({ message: "Invalid data" });
+  }
+};
+
 const updateUser = async (req, res) => {
   // res.json({ message: "update user" });
   const user = await userModel.findById(req.params.id);
@@ -73,4 +95,4 @@ const deleteUser = async (req, res) => {
   }
 };
 
-export { createUser, getUser, getUsers, updateUser, deleteUser };
+export { createUser, getUser, getUsers, updateUser, deleteUser, logUser };

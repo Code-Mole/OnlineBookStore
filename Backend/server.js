@@ -6,6 +6,7 @@ import { userRouter } from "./Routes/userRouter.js";
 import { contactRouter } from "./Routes/contactRouter.js";
 
 const server = express();
+server.set("view engine ", "ejs");
 server.use(cors());
 server.use(express.json());
 server.use("/api/books", bookRouter);
