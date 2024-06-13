@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../login/login.module.css";
 import HomeIcon from "@mui/icons-material/Home";
@@ -11,26 +12,34 @@ function page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const usenavigate = useNavigate();
+
+  const data = {
+    email: email,
+    password: password,
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("proceed");
-    try {
-      await axios
-        .post("http://localhost:8080/api/users/login", { email })
-        .then((res) => {
-          return res.json();
-          console.log("ready");
-        })
-        .then((resp) => {
-          console.log(resp);
-        });
-    } catch (err) {
-      console.log(err.message);
-      alert(err.message);
-    }
+    axios
+      .post("http://localhost:8080/api/users/login", data)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.password === password) {
+          usenavigate("/");
+        } else {
+          console.log("wrong password");
+          usenavigate("/login");
+          alert("wrong password");
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
     setEmail("");
     setPassword("");
   };
+
   return (
     <>
       <div className={styles.loginContainer}>
