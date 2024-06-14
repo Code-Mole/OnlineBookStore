@@ -27,18 +27,12 @@ function page() {
                     </a>
                   </li>
                   <li>
-                    <a href="shop">
+                    <a href="login">
                       <ShoppingCartIcon className={styles.icons} />
                       Shop
                     </a>
                   </li>
-                  <li>
-                    <a href="about">
-                      {" "}
-                      <InfoIcon className={styles.icons} />
-                      About
-                    </a>
-                  </li>
+                  <li></li>
                   <li>
                     <a href="contact">
                       <ContactsIcon className={styles.icons} />

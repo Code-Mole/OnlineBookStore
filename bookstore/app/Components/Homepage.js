@@ -17,7 +17,7 @@ function Homepage() {
               <nav>
                 <ul>
                   <li>
-                    <a href="shop">
+                    <a href="login">
                       <ShoppingCartIcon className={styles.icons} />
                       Shop
                     </a>
@@ -38,17 +38,7 @@ function Homepage() {
               </nav>
             </div>
           </div>
-          <div className={styles.search}>
-            <input
-              type="search"
-              name="search "
-              id={styles.searchInput}
-              placeholder="Search Books "
-            />
-            <button type="search" id={styles.searchbtn}>
-              Search
-            </button>
-          </div>
+
           <div className={styles.textArea}>
             <p>Explore Your Favorite Books 📚</p>
             <h2 className={styles.title}>
@@ -63,16 +53,7 @@ function Homepage() {
             </div>
           </div>
         </div>
-        <div className={styles.sub_container_right}>
-          <div className={styles.log_Ins}>
-            <button className={styles.btn} id={styles.btn1} type="button">
-              <a href="login">logIn</a>
-            </button>
-            <button className={styles.btn} type="button">
-              <a href="signup">Create Account</a>
-            </button>
-          </div>
-        </div>
+        <div className={styles.sub_container_right}></div>
       </div>
     </>
   );

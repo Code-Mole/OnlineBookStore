@@ -16,6 +16,9 @@
   margin: 20px 0;
   position: static;
 }
+.navigations a {
+  text-decoration: none;
+}
 .logo h1 {
   font-size: 1.5rem;
   color: #000;
@@ -112,4 +115,15 @@
 .icons {
   color: #261145;
   margin-right: 10px;
+}
+
+/* Smaller Screens */
+
+@media screen and (max-width: 1000px) {
+  .loginSubContainer {
+    width: 60%;
+  }
+  #para {
+    left: 50px;
+  }
 }

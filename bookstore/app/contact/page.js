@@ -4,7 +4,10 @@ import axios from "axios";
 import styles from "./contact.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ContactsIcon from "@mui/icons-material/Contacts";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import InfoIcon from "@mui/icons-material/Info";
 
 function page() {
@@ -72,7 +75,7 @@ function page() {
                       </a>
                     </li>
                     <li>
-                      <a href="shop">
+                      <a href="login">
                         <ShoppingCartIcon className={styles.icons} />
                         Shop
                       </a>
@@ -84,12 +87,7 @@ function page() {
                         About
                       </a>
                     </li>
-                    <li>
-                      <a href="contact">
-                        <ContactsIcon className={styles.icons} />
-                        Contact
-                      </a>
-                    </li>
+                    <li></li>
                   </ul>
                 </nav>
               </div>
@@ -103,6 +101,23 @@ function page() {
                   Learning
                   <br /> Transformation
                 </h1>
+                <div className={styles.socialMedia}>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100084081554134"
+                    className={styles.facebook}
+                  >
+                    <FacebookIcon className={styles.icons} />
+                  </a>
+                  <a href="">
+                    <TwitterIcon className={styles.icons} />
+                  </a>
+                  <a href="">
+                    <LinkedInIcon className={styles.icons} />
+                  </a>
+                  <a href="">
+                    <InstagramIcon className={styles.icons} />
+                  </a>
+                </div>
                 <button type="button" className={styles.textBtn}>
                   <a href="#ContactSection">Contact Us ......</a>
                 </button>
@@ -139,8 +154,8 @@ function page() {
                 />
                 <textarea
                   id={styles.teatArea}
-                  cols={35}
-                  rows={15}
+                  cols={5}
+                  rows={4}
                   placeholder="Say Something ........"
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>

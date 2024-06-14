@@ -230,12 +230,7 @@ export default function page() {
                     Home
                   </a>
                 </li>
-                <li>
-                  <a href="shop">
-                    <ShoppingCartIcon className={styles.icons} />
-                    Shop
-                  </a>
-                </li>
+                <li></li>
                 <li>
                   <a href="about">
                     {" "}
@@ -258,6 +253,17 @@ export default function page() {
               </ul>
             </nav>
           </div>
+        </div>
+        <div className={styles.search}>
+          <input
+            type="search"
+            name="search "
+            id={styles.searchInput}
+            placeholder="Search Books "
+          />
+          <button type="search" id={styles.searchbtn}>
+            Search
+          </button>
         </div>
         {/* <div className={styles.shopmargin}>
       <div>

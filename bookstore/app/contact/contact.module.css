@@ -82,7 +82,7 @@
   width: 38%;
 }
 .teatContainer h1 {
-  margin: 40px 0 0;
+  margin: 10px 0 0;
   font-size: 62px;
 }
 .textBtn {
@@ -171,4 +171,48 @@
 .icons {
   color: #261145;
   margin-right: 10px;
+}
+
+/* Smaller Screens  */
+
+@media screen and (max-width: 1000px) {
+  #header {
+    font-size: 30px;
+  }
+  .contactPage {
+    height: 100vh;
+  }
+  .sub_container_up {
+    width: 100%;
+    display: flex;
+  }
+  .teatContainer h1 {
+    font-size: 30px;
+  }
+  .imgContainer {
+    width: 30%;
+    position: relative;
+    left: 13%;
+  }
+  .textBtn {
+    width: 80%;
+    padding: 10px;
+    position: relative;
+    top: 10%;
+  }
+  .socialMedia {
+    margin-top: 15px;
+  }
+  .sub_container_down {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    top: 5rem;
+  }
+  .formContainer {
+    width: 90%;
+    height: 20rem;
+    margin-top: 20px;
+  }
 }

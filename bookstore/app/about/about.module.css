@@ -117,3 +117,23 @@
   color: #261145;
   margin-right: 10px;
 }
+
+/* Smaller Screens  */
+
+@media screen and (max-width: 1000px) {
+  .sub_container_right {
+    display: none;
+  }
+  .sub_container_left {
+    height: 100vh;
+    width: 100%;
+  }
+  .textArea {
+    width: 90%;
+    position: relative;
+    left: 5%;
+  }
+  #header {
+    font-size: 30px;
+  }
+}

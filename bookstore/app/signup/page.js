@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../login/login.module.css";
 import HomeIcon from "@mui/icons-material/Home";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import ContactsIcon from "@mui/icons-material/Contacts";
-import InfoIcon from "@mui/icons-material/Info";
+
 import axios from "axios";
 
 function page() {
@@ -58,28 +56,8 @@ function page() {
               <ul>
                 <li>
                   <a href="/">
-                    {" "}
                     <HomeIcon className={styles.icons} />
                     Home
-                  </a>
-                </li>
-                <li>
-                  <a href="shop">
-                    <ShoppingCartIcon className={styles.icons} />
-                    Shop
-                  </a>
-                </li>
-                <li>
-                  <a href="about">
-                    {" "}
-                    <InfoIcon className={styles.icons} />
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="contact">
-                    <ContactsIcon className={styles.icons} />
-                    Contact
                   </a>
                 </li>
               </ul>
