@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import styles from "../login/login.module.css";
 import HomeIcon from "@mui/icons-material/Home";
@@ -12,7 +12,7 @@ function page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const usenavigate = useNavigate();
+  const router = useRouter();
 
   const data = {
     email: email,
@@ -25,13 +25,13 @@ function page() {
       .post("http://localhost:8080/api/users/login", data)
       .then((res) => {
         console.log(res.data);
-        if (res.data.password === password) {
-          usenavigate("/");
-        } else {
-          console.log("wrong password");
-          usenavigate("/login");
-          alert("wrong password");
-        }
+        router.push("/shop");
+        // if (res.data.password === password) {
+        // } else {
+        //   console.log("wrong password");
+        //   usenavigate("/about");
+        //   alert("wrong password");
+        // }
       })
       .catch((err) => {
         console.log(err.message);

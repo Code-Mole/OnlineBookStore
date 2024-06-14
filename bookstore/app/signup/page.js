@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "../login/login.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -14,6 +15,8 @@ function page() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const router = useRouter();
+
   const data = {
     first__name,
     last__name,
@@ -21,14 +24,20 @@ function page() {
     password,
   };
 
-  const registerUser = async () => {
-    await axios.post("http://localhost:8080/api/users", data).then((res) => {
-      setMessage(res.data);
-    });
+  const registerUser = () => {
+    axios
+      .post("http://localhost:8080/api/users", data)
+      .then((res) => {
+        console.log(res.data);
+        router.push("/shop");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
-  const fetchUsers = async () => {
-    await axios.get("http://localhost:8080/api/users").then((res) => {
+  const fetchUsers = () => {
+    axios.get("http://localhost:8080/api/users").then((res) => {
       console.log(res.data);
     });
   };
