@@ -212,7 +212,15 @@
   }
   .formContainer {
     width: 90%;
-    height: 20rem;
-    margin-top: 20px;
+    height: 26rem;
+    margin: 20px 0;
+  }
+  .ratingContainer {
+    display: flex;
+    margin-top: 2rem;
+    /* flex-direction: column; */
+  }
+  #imgContainer {
+    display: none;
   }
 }

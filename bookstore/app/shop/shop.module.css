@@ -125,4 +125,8 @@
     position: relative;
     right: 47px;
   }
+  .product__row {
+    display: flex;
+    flex-direction: column;
+  }
 }

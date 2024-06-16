@@ -3,6 +3,7 @@ import styles from "../page.module.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Homepage() {
   return (
@@ -12,6 +13,9 @@ function Homepage() {
           <div className={styles.navigations}>
             <div className={styles.logo}>
               <h1 className={styles.logo}>BookHaven 📖</h1>
+            </div>
+            <div className={styles.menuIcon}>
+              <MenuIcon />
             </div>
             <div className={styles.nav}>
               <nav>

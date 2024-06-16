@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Smaller Screens */
+
+@media screen and (max-width: 1000px) {
+  
+}

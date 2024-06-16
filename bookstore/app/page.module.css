@@ -230,4 +230,17 @@
     position: relative;
     right: 47px;
   }
+  .nav {
+    width: 40%;
+    background-color: lightgray;
+    /* display: none; */
+  }
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav a {
+    position: relative;
+    left: 50px;
+  }
 }
