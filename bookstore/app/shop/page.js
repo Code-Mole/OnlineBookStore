@@ -211,7 +211,7 @@ const bookData = [
   },
 ];
 
-export default function page() {
+export default function page({ bookData }) {
   //   console.log(bookData);
   return (
     <>

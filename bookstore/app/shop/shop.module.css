@@ -118,8 +118,8 @@
 @media screen and (max-width: 1000px) {
   .search {
     position: absolute;
-    top: 30%;
-    left: 10%;
+    top: 50%;
+    left: 20%;
   }
   #searchbtn {
     position: relative;
@@ -128,5 +128,22 @@
   .product__row {
     display: flex;
     flex-direction: column;
+    width: 90%;
+  }
+  .product__container {
+    margin-left: 5%;
+  }
+  .nav {
+    width: 40%;
+    background-color: white;
+    /* display: none; */
+  }
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav a {
+    position: relative;
+    left: 50px;
   }
 }

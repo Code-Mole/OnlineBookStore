@@ -1,7 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "../page.module.css";
 
 function Product({ title, price, rating, image }) {
+  const [basket, setBasket] = useState([]);
+
+  const handleClick = () => {
+    alert("Added to Basket");
+    setBasket();
+  };
   return (
     <div className={styles.product}>
       <div className={styles.product__info}>
@@ -20,7 +27,9 @@ function Product({ title, price, rating, image }) {
       </div>
       <div className={styles.product__image}>
         <img src={image} alt="product" />
-        <button className={styles.product__button}>Add to Basket</button>
+        <button className={styles.product__button} onClick={handleClick}>
+          Add to Basket
+        </button>
       </div>
     </div>
   );
