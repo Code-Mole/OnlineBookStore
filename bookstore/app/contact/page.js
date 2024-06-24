@@ -9,6 +9,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import InfoIcon from "@mui/icons-material/Info";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function page() {
   const [userName, setUserName] = useState("");
@@ -55,6 +56,15 @@ function page() {
     fetchData();
   }, []);
 
+  function openMenu() {
+    const nav = document.getElementById("nav");
+    nav.style.display = "block";
+  }
+
+  const closeMenu = () => {
+    const nav = document.getElementById("nav");
+    nav.style.display = "none";
+  };
   return (
     <>
       <div className={styles.RootPage}>
@@ -64,7 +74,11 @@ function page() {
               <div className={styles.logo}>
                 <h1 className={styles.logo}>BookHaven 📖</h1>
               </div>
-              <div className={styles.nav}>
+              <div className={styles.menuIcon}>
+                <MenuIcon onClick={openMenu} />
+                <MenuIcon onClick={closeMenu} />
+              </div>
+              <div id="nav" className={styles.nav}>
                 <nav>
                   <ul>
                     <li>

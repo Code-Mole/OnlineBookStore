@@ -117,6 +117,9 @@
   color: #261145;
   margin-right: 10px;
 }
+.menuicon {
+  display: none;
+}
 
 /* Smaller Screens  */
 
@@ -139,7 +142,7 @@
   .nav {
     width: 40%;
     background-color: lightgray;
-    /* display: none; */
+    display: none;
   }
   .nav ul {
     display: flex;
@@ -148,5 +151,8 @@
   .nav a {
     position: relative;
     left: 50px;
+  }
+  .menuicon {
+    display: none;
   }
 }

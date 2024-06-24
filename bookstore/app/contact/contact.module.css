@@ -226,7 +226,7 @@
   .nav {
     width: 40%;
     background-color: lightgray;
-    /* display: none; */
+    display: none;
   }
   .nav ul {
     display: flex;

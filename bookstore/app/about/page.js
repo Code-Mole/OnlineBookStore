@@ -1,14 +1,23 @@
+"use client";
 import React from "react";
 import styles from "./about.module.css";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function page() {
-  // const Lfunction = ()=>{
-  //   alert('Please we are still working on it  ')
-  // }
+  function openMenu() {
+    const nav = document.getElementById("nav");
+    nav.style.display = "block";
+    console.log(nav);
+  }
+
+  const closeMenu = () => {
+    const nav = document.getElementById("nav");
+    nav.style.display = "none";
+  };
   return (
     <>
       <div className={styles.aboutPage}>
@@ -16,6 +25,10 @@ function page() {
           <div className={styles.navigations}>
             <div className={styles.logo}>
               <h1 className={styles.logo}>BookHaven 📖</h1>
+            </div>
+            <div id="nav" className={styles.menuIcon}>
+              <MenuIcon onClick={openMenu} />
+              <MenuIcon onClick={closeMenu} />
             </div>
             <div className={styles.nav}>
               <nav>
