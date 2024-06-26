@@ -10,6 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import InfoIcon from "@mui/icons-material/Info";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 function page() {
   const [userName, setUserName] = useState("");
@@ -76,7 +77,7 @@ function page() {
               </div>
               <div className={styles.menuIcon}>
                 <MenuIcon onClick={openMenu} />
-                <MenuIcon onClick={closeMenu} />
+                <CloseIcon onClick={closeMenu} />
               </div>
               <div id="nav" className={styles.nav}>
                 <nav>

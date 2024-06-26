@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./shop.module.css";
 import HomeIcon from "@mui/icons-material/Home";
@@ -7,6 +8,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Product from "../Components/Product.js";
 // import Book from '../components/Book/Book.js';
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const bookData = [
   {
@@ -212,6 +215,15 @@ const bookData = [
 ];
 
 export default function page({ bookData }) {
+  function openMenu() {
+    const nav = document.getElementById("nav");
+    nav.style.display = "block";
+  }
+
+  const closeMenu = () => {
+    const nav = document.getElementById("nav");
+    nav.style.display = "none";
+  };
   //   console.log(bookData);
   return (
     <>
@@ -220,7 +232,11 @@ export default function page({ bookData }) {
           <div className={styles.logo}>
             <h1 className={styles.logo}>BookHaven 📖</h1>
           </div>
-          <div className={styles.nav}>
+          <div className={styles.menuIcon}>
+            <MenuIcon onClick={openMenu} />
+            <CloseIcon onClick={closeMenu} />
+          </div>
+          <div id="nav" className={styles.nav}>
             <nav>
               <ul>
                 <li>
