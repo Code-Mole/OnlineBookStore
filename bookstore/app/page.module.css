@@ -187,6 +187,12 @@
   color: #fff;
   transform: scale(1.1);
 }
+.menu {
+  display: none;
+}
+.close {
+  display: none;
+}
 /* .product__info {
   margin-top: 2rem;
 } */
@@ -242,5 +248,15 @@
   .nav a {
     position: relative;
     left: 50px;
+  }
+  .menu {
+    display: flex;
+  }
+  .close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: red;
   }
 }

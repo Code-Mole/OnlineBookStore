@@ -6,15 +6,31 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 function page() {
+  const menu = document.getElementById("menu");
+  console.log(menu);
+  const close = document.getElementById("close");
+  console.log(close);
   function openMenu() {
+    // if (menu.classList.contains("page_menu__oE2yl")) {
+    //   menu.style.display = "none";
+    //   close.style.display = "block";
+    // }
+    console.log(menu);
+
     const nav = document.getElementById("nav");
     nav.style.display = "block";
-    console.log(nav);
   }
 
   const closeMenu = () => {
+    // if (close.classList.contains("page_close__dAI8o")) {
+    //   close.style.display = "none";
+    //   menu.style.display = "block";
+    // }
+    // console.log(close.classList.contains("page_close__dAI8o"));
+    console.log(close);
     const nav = document.getElementById("nav");
     nav.style.display = "none";
   };
@@ -26,11 +42,17 @@ function page() {
             <div className={styles.logo}>
               <h1 className={styles.logo}>BookHaven 📖</h1>
             </div>
-            <div id="nav" className={styles.menuIcon}>
+            <div id="menu" className={styles.menu}>
+              <MenuIcon className={styles.menuIcon} onClick={openMenu} />
+            </div>
+            <div id="close" className={styles.close}>
+              <CloseIcon className={styles.closeIcon} onClick={closeMenu} />
+            </div>
+            {/* <div  className={styles.menuIcon}>
               <MenuIcon onClick={openMenu} />
               <MenuIcon onClick={closeMenu} />
-            </div>
-            <div className={styles.nav}>
+            </div> */}
+            <div id="nav" className={styles.nav}>
               <nav>
                 <ul>
                   <li>

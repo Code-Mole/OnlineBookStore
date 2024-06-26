@@ -117,7 +117,10 @@
   color: #261145;
   margin-right: 10px;
 }
-.menuicon {
+.menu {
+  display: none;
+}
+.close {
   display: none;
 }
 
@@ -152,7 +155,14 @@
     position: relative;
     left: 50px;
   }
-  .menuicon {
+  .menu {
+    display: flex;
+  }
+  .close {
     display: none;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: red;
   }
 }
