@@ -6,6 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 function page() {
   const menu = document.getElementById("menu");
@@ -37,7 +38,12 @@ function page() {
     <>
       <div className={styles.aboutPage}>
         <div className={styles.sub_container_left}>
-          <div className={styles.navigations}>
+          <motion.div
+            className={styles.navigations}
+            initial={{ opacity: 0, y: "-100vh" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
             <div className={styles.logo}>
               <h1 className={styles.logo}>BookHaven 📖</h1>
             </div>
@@ -76,12 +82,23 @@ function page() {
                 </ul>
               </nav>
             </div>
-          </div>
-          <h1 id={styles.header}>Welcome to BookHaven Store 📚</h1>
+          </motion.div>
+          <motion.h1
+            id={styles.header}
+            initial={{ opacity: 0, x: "-100vw" }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Welcome to BookHaven Store 📚
+          </motion.h1>
           <div className={styles.textArea}>
             <div className={styles.text}>
               <h3>About Us</h3>
-              <p>
+              <motion.p
+                initial={{ opacity: 0, y: "100vh" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
                 Welcome to BookHaven, your ultimate destination for all things
                 literary! At BookHaven, we believe in the power of storytelling
                 and the magic that books bring into our lives. Our online
@@ -102,7 +119,7 @@ function page() {
                 soon as possible. Join us in celebrating the beauty of words and
                 the boundless worlds they create. Welcome to BookHaven, where
                 every page turns into an unforgettable journey.
-              </p>
+              </motion.p>
             </div>
             <div>
               <button type="button" className={styles.textBtn}>

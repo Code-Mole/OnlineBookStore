@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../page.module.css";
+import { bookData } from "../Data/bookData";
 
 function Product({ title, price, rating, image }) {
   const [basket, setBasket] = useState([]);
@@ -12,7 +13,19 @@ function Product({ title, price, rating, image }) {
   return (
     <div className={styles.product}>
       <div className={styles.product__info}>
-        <p>{title}</p>
+        {bookData.map((book, id) => {
+          return (
+            <div key={id}>
+              <div>{book.title}</div>
+              <div>{book.image}</div>
+              <div>{book.description}</div>
+              <div>{book.catogory}</div>
+              <div>{book.price}</div>
+              <div>{book.rate}</div>
+            </div>
+          );
+        })}
+        {/* <p>{title}</p>
         <p className={styles.product__price}>
           <small>$</small>
           <strong>{price}</strong>
@@ -26,7 +39,8 @@ function Product({ title, price, rating, image }) {
           ))}
       </div>
       <div className={styles.product__image}>
-        <img src={image} alt="product" />
+        <img src={image} alt="product" /> */}
+
         <button className={styles.product__button} onClick={handleClick}>
           Add to Basket
         </button>

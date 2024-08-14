@@ -11,6 +11,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import InfoIcon from "@mui/icons-material/Info";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 function page() {
   const [userName, setUserName] = useState("");
@@ -66,12 +67,37 @@ function page() {
     const nav = document.getElementById("nav");
     nav.style.display = "none";
   };
+
+  const contactVariants = {
+    hidden: {
+      opacity: 0,
+      x: "-100vh",
+    },
+    nav_initial: {
+      opacity: 0,
+      y: "-100vh",
+    },
+    nav_animate: {
+      opacity: 1,
+      y: 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
   return (
     <>
       <div className={styles.RootPage}>
         <section className={styles.contactPage}>
           <div>
-            <div className={styles.navigations}>
+            <motion.div
+              className={styles.navigations}
+              variants={contactVariants}
+              initial="nav_initial"
+              animate="nav_animate"
+              transition={{ duration: 1, delay: 0.5 }}
+            >
               <div className={styles.logo}>
                 <h1 className={styles.logo}>BookHaven 📖</h1>
               </div>
@@ -106,17 +132,34 @@ function page() {
                   </ul>
                 </nav>
               </div>
-            </div>
-            <h1 id={styles.header}>Welcome to BookHaven Store 📚</h1>
+            </motion.div>
+            <motion.h1
+              id={styles.header}
+              variants={contactVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              Welcome to BookHaven Store 📚
+            </motion.h1>
             <div className={styles.sub_container_up}>
               <div className={styles.teatContainer}>
-                <h1>
+                <motion.h1
+                  initial={{ opacity: 0, x: "-100vh" }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
                   Our Dream <br />
                   Is Global <br />
                   Learning
                   <br /> Transformation
-                </h1>
-                <div className={styles.socialMedia}>
+                </motion.h1>
+                <motion.div
+                  className={styles.socialMedia}
+                  initial={{ opacity: 0, x: "-100vh" }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
                   <a
                     href="https://www.facebook.com/profile.php?id=100084081554134"
                     className={styles.facebook}
@@ -132,17 +175,28 @@ function page() {
                   <a href="">
                     <InstagramIcon className={styles.icons} />
                   </a>
-                </div>
-                <button type="button" className={styles.textBtn}>
+                </motion.div>
+                <motion.button
+                  type="button"
+                  className={styles.textBtn}
+                  initial={{ opacity: 0, y: "-100vh" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
                   <a href="#ContactSection">Contact Us ......</a>
-                </button>
+                </motion.button>
               </div>
-              <div className={styles.imgContainer}></div>
+              <motion.div
+                className={styles.imgContainer}
+                initial={{ opacity: 0, x: "100vh" }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              ></motion.div>
             </div>
           </div>
         </section>
         <hr id={styles.line} />
-        <section id="ContactSection">
+        <section className={styles.ContactSection}>
           <div className={styles.sub_container_down}>
             <div className={styles.formContainer}>
               <form id={styles.formflex}>
