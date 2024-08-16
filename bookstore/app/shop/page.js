@@ -7,7 +7,7 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import InfoIcon from "@mui/icons-material/Info";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Product from "../Components/Product.js";
-// import Book from '../components/Book/Book.js';
+// import Book from "../components/Book/Book.js";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
@@ -24,6 +24,11 @@ export default function page() {
     nav.style.display = "none";
   };
   //   console.log(bookData);
+
+  const bookVariants = {
+    hidden: { opacity: 0, y: "-100vh" },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
+  };
   return (
     <>
       <div className={styles.shop__container}>
@@ -98,7 +103,12 @@ export default function page() {
           />
         </div>
         <div className={styles.product__container}>
-          <div className={styles.product__row}>
+          <motion.div
+            className={styles.product__row}
+            variants={bookVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <Product
               title="Infinite Powers"
               price={29.99}
@@ -117,8 +127,13 @@ export default function page() {
               image="/images/book4.jpeg"
               rating={5}
             />
-          </div>
-          <div className={styles.product__row}>
+          </motion.div>
+          <motion.div
+            className={styles.product__row}
+            variants={bookVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <Product
               title="Machine Learning system design interview for developers "
               price={41.99}
@@ -131,8 +146,13 @@ export default function page() {
               image="/images/book7.jpeg"
               rating={2}
             />
-          </div>
-          <div className={styles.product__row}>
+          </motion.div>
+          <motion.div
+            className={styles.product__row}
+            variants={bookVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <Product
               title="Take my hand"
               price={15.99}
@@ -157,8 +177,13 @@ export default function page() {
               image="/images/book16.jpeg"
               rating={5}
             />
-          </div>
-          <div className={styles.product__row}>
+          </motion.div>
+          <motion.div
+            className={styles.product__row}
+            variants={bookVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <Product
               title="Small business ideas for beginners"
               price={25.99}
@@ -171,8 +196,13 @@ export default function page() {
               image="/images/book19.jpeg"
               rating={4}
             />
-          </div>
-          <div className={styles.product__row}>
+          </motion.div>
+          <motion.div
+            className={styles.product__row}
+            variants={bookVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <Product
               title="Guide to Graphic design"
               price={28.99}
@@ -180,7 +210,7 @@ export default function page() {
               rating={5}
             />
             {/* <Product /> */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

@@ -1,19 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../page.module.css";
-import { bookData } from "../Data/bookData";
+// import { bookData } from "../Data/bookData";
 
 function Product({ title, price, rating, image }) {
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useState(0);
 
   const handleClick = () => {
-    alert("Added to Basket");
-    setBasket();
+    // alert("Added to Basket");
+    setBasket(basket + 1);
+    console.log(basket);
   };
   return (
     <div className={styles.product}>
       <div className={styles.product__info}>
-        {bookData.map((book, id) => {
+        {/* {bookData.map((book, id) => {
           return (
             <div key={id}>
               <div>{book.title}</div>
@@ -24,8 +25,8 @@ function Product({ title, price, rating, image }) {
               <div>{book.rate}</div>
             </div>
           );
-        })}
-        {/* <p>{title}</p>
+        })} */}
+        <p>{title}</p>
         <p className={styles.product__price}>
           <small>$</small>
           <strong>{price}</strong>
@@ -39,7 +40,7 @@ function Product({ title, price, rating, image }) {
           ))}
       </div>
       <div className={styles.product__image}>
-        <img src={image} alt="product" /> */}
+        <img src={image} alt="product" />
 
         <button className={styles.product__button} onClick={handleClick}>
           Add to Basket
